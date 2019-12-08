@@ -17,7 +17,7 @@
            <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                
                <a href="#" class="btn btn-success btn-sm">Welcome</a>
-               <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+               <a href="checkout.php">No Items In Your Cart | Total Price: $0 </a>
                
            </div><!-- col-md-6 offer Finish -->
            
@@ -26,16 +26,16 @@
                <ul class="menu"><!-- cmenu Begin -->
                    
                    <li>
-                       <a href="customer_register.php">Register</a>
-                   </li>
-                   <li>
-                       <a href="checkout.php">My Account</a>
-                   </li>
-                   <li>
                        <a href="cart.php">Go To Cart</a>
                    </li>
                    <li>
+                       <a href="checkout.php">Account</a>
+                   </li>
+                   <li>
                        <a href="checkout.php">Login</a>
+                   </li>
+                   <li>
+                       <a href="customer_register.php">Register</a>
                    </li>
                    
                </ul><!-- menu Finish -->
@@ -90,13 +90,13 @@
                            <a href="shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="checkout.php">My Account</a>
-                       </li>
-                       <li>
                            <a href="cart.php">Shopping Cart</a>
                        </li>
                        <li>
                            <a href="contact.php">Contact Us</a>
+                       </li>
+                        <li>
+                           <a href="checkout.php">Account</a>
                        </li>
                        
                    </ul><!-- nav navbar-nav left Finish -->
@@ -215,7 +215,419 @@
        </div><!-- col-md-12 Finish -->
        
    </div><!-- container Finish -->
+   <div id="advantages"><!-- #advantages Begin -->
+       
+       <div class="container"><!-- container Begin -->
+           
+           <div class="same-height-row"><!-- same-height-row Begin -->
+               
+               <div class="col-sm-4"><!-- col-sm-4 Begin -->
+                   
+                   <div class="box same-height"><!-- box same-height Begin -->
+                       
+                       <div class="icon"><!-- icon Begin -->
+                           
+                           <i class="fa fa-heart"></i>
+                           
+                       </div><!-- icon Finish -->
+                       
+                       <h3><a href="#">Best Offer</a></h3>
+                       
+                       <p>Limited time offers </p>
+                       
+                   </div><!-- box same-height Finish -->
+                   
+               </div><!-- col-sm-4 Finish -->
+               
+               <div class="col-sm-4"><!-- col-sm-4 Begin -->
+                   
+                   <div class="box same-height"><!-- box same-height Begin -->
+                       
+                       <div class="icon"><!-- icon Begin -->
+                           
+                           <i class="fa fa-tag"></i>
+                           
+                       </div><!-- icon Finish -->
+                       
+                       <h3><a href="#">Best Prices</a></h3>
+                       
+                       <p>Lower prices for better quality</p>
+                       
+                   </div><!-- box same-height Finish -->
+                   
+               </div><!-- col-sm-4 Finish -->
+               
+               <div class="col-sm-4"><!-- col-sm-4 Begin -->
+                   
+                   <div class="box same-height"><!-- box same-height Begin -->
+                       
+                       <div class="icon"><!-- icon Begin -->
+                           
+                           <i class="fa fa-thumbs-up"></i>
+                           
+                       </div><!-- icon Finish -->
+                       
+                       <h3><a href="#">100% Original</a></h3>
+                       
+                       <p>Special limited items</p>
+                       
+                   </div><!-- box same-height Finish -->
+                   
+               </div><!-- col-sm-4 Finish -->
+               
+           </div><!-- same-height-row Finish -->
+           
+       </div><!-- container Finish -->
+       
+   </div><!-- #advantages Finish -->
    
+   <div id="hot"><!-- #hot Begin -->
+       
+       <div class="box"><!-- box Begin -->
+           
+           <div class="container"><!-- container Begin -->
+               
+               <div class="col-md-12"><!-- col-md-12 Begin -->
+                   
+                   <h2>
+                       Our Products
+                   </h2>
+                   
+               </div><!-- col-md-12 Finish -->
+               
+           </div><!-- container Finish -->
+           
+       </div><!-- box Finish -->
+       
+   </div><!-- #hot Finish -->
+   
+   <div id="content" class="container"><!-- container Begin -->
+       
+       <div class="row"><!-- row Begin -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Shirt
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Dress
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Shirt
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Dress
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Dress
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Shirt
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                               Dress
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+           <div class="col-sm-4 col-sm-6 single"><!-- col-sm-4 col-sm-6 single Begin -->
+               
+               <div class="product"><!-- product Begin -->
+                   
+                   <a href="details.php">
+                       
+                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
+                       
+                   </a>
+                   
+                   <div class="text"><!-- text Begin -->
+                       
+                       <h3>
+                           <a href="details.php">
+                              Shirt
+                           </a>
+                       </h3>
+                       
+                       <p class="price">$30</p>
+                       
+                       <p class="button">
+                           
+                           <a href="details.php" class="btn btn-default">View Details</a>
+                           
+                           <a href="details.php" class="btn btn-primary">
+                               
+                               <i class="fa fa-shopping-cart">
+                                   Add To Cart
+                               </i>
+                               
+                           </a>
+                           
+                       </p>
+                       
+                   </div><!-- text Finish -->
+                   
+               </div><!-- product Finish -->
+               
+           </div><!-- col-sm-4 col-sm-6 single Finish -->
+           
+       </div><!-- row Finish -->
+       
+   </div><!-- container Finish -->
     
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>

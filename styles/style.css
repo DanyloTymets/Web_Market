@@ -1,29 +1,21 @@
-/*
-Template Name     : M-Dev Store
-Author Name       : MrGhie
-Author Email      : mugianto1nd@gmail.com
-Theme URI         : www.m-dev-store.com | localhost/m-dev-store
-Theme Ver         : 1.1
-*/
-
 /* General Styles */
 
 body{
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333333;
-    background: #f0f0f0;
+    color: #B0C4DE;
+    background: #ffffff;
     overflow-x: hidden;
 }
 
 /* Top Styles */
 
 #top{
-    background: #555555;
+    background: #B0C4DE;
     padding: 10px 0;
 }
 #top .offer{
-    color: #ffffff;
+    color: #B0C4DE;
 }
 #top .offer .btn{
     text-transform: uppercase;
@@ -40,7 +32,7 @@ body{
     }
 }
 #top a{
-    color: #ffffff;
+    color: #B0C4DE;
 }
 #top ul.menu{
     padding-top: 5px;
@@ -58,18 +50,18 @@ body{
     display: inline-block;
 }
 #top ul.menu > li a{
-    color: #eeeeee;
+    color: #ffffff;
 }
 #top ul.menu > li + li:before{
     content: "|\00a0";
-    color: #f7f7f7;
+    color: #B0C4DE;
     padding: 0 5px;
 }
 
 /* Header Styles */
 
 .navbar{
-    background: #ffffff;
+    background: #B0C4DE;
 }
 .navbar-collapse .right{
     float: right;
@@ -89,24 +81,41 @@ body{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
+    background: #B0C4DE;
 }
 .navbar ul.nav > li > a:hover{
-    background: #e7e7e7;
+    background: #5F9EA0;
 }
 .padding-nav{
     padding-top: 10px;
 }
-.btn-primary{
-    color: rgb(255, 255, 255);
-    background: rgb(79, 191, 168);
-    border-color: rgb(65, 179, 156);
+.btn {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.btn-primary {
+  font-family: Raleway-SemiBold;
+  font-size: 13px;
+  color: #B0C4DE;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid #B0C4DE;
+  border-radius: 40px;
+  background: transparent;
+  background-color: #fff !important;
+  transition: all 0.3s ease 0s;
+}
+.btn-primary:hover {
+  color: #B0C4DE;
+  background: #ffffff;
+  border: 2px solid #B0C4DE;
 }
 #search .navbar-form{
     float: right;
 }
 #search{
     clear: both;
-    border-top: solid 1px #9adacd;
+    border-top: solid 1px #B0C4DE;
     text-align: right;
 }
 #search .navbar-form .input-group{
@@ -116,3 +125,102 @@ body{
     width: 100%;
 }
 
+
+#slider{
+    margin-bottom: 40px;
+}
+
+/* advantages Styles */
+
+#advantages{
+    text-align: center;
+}
+.box{
+    background: #ffffff;
+    margin: 0 0 30px;
+    border: solid 1px #e6e6e6;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+}
+#advantages .box .icon{
+    position: absolute;
+    font-size: 120px;
+    width: 100%;
+    text-align: center;
+    top: -20px;
+    left: 0px;
+    height: 100%;
+    float: left;
+    color: #dadada;
+    box-sizing: border-box;
+    z-index: 1;
+}
+#advantages .box h3{
+    position: relative;
+    margin: 0 0 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    z-index: 2;
+}
+#advantages .box h3 a{
+    color: #4fbfa8;
+}
+#advantages .box h3 a:hover{
+    text-decoration: none;
+}
+#advantages .box p{
+    position: relative;
+    z-index: 2;
+    color: #555555;
+}
+
+/* Latest Products Styles */
+
+#hot h2{
+    font-size: 36px;
+    font-weight: 400;
+    color: #4fbfa8;
+    text-align: center;
+    text-transform: uppercase;
+}
+#content{
+   padding-left: 25px; 
+}
+.single{
+    width: 290px;
+}
+@media(max-width:768px){
+    .single{
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+#content .product{
+    background: #ffffff;
+    border: solid 1px #e6e6e6;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+#content .product .text{
+    padding: 10px 10px 0px;
+}
+#content .product .text p.price{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+}
+#content .product .text .button{
+    text-align: center;
+    clear: both;
+}
+#content .product .text .button .btn{
+    margin-bottom: 10px;
+}
+#content .product .text h3{
+    text-align: center;
+    font-size: 20px;
+}
+#content .product .text h3 a{
+    color: rgb(85, 85, 85);
+}
