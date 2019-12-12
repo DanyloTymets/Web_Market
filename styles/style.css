@@ -95,7 +95,7 @@ body{
   color: #B0C4DE;
   letter-spacing: 1px;
   line-height: 15px;
-  border: 2px solid #B0C4DE;
+  border: 2px solid #5F9EA0;
   border-radius: 40px;
   background: transparent;
   background-color: #fff !important;
@@ -307,11 +307,13 @@ body{
 
 #content #productMain{
     margin-bottom: 30px;
+    color: #5F9EA0;
 }
 #content #productMain .price{
     font-size: 30px;
     font-weight: 300;
     text-align: center;
+    color: #5F9EA0;
     margin-top: 30px;
 }
 #content #mainImage{
@@ -324,4 +326,63 @@ body{
 }
 #content .headline{
     height: 360px;
+    margin-left: -15px;
+    margin-right: 10px;
+    color: #5F9EA0;
+}
+#content .info1 {
+    color: #5F9EA0;
+}
+
+#content #cart .table tbody tr td img{
+    width: 50px;
+}
+#content #cart .table tbody tr td input{
+    width: 40px;
+    color: #5F9EA0;
+    text-align: right;
+}
+#content #cart .table tbody tr td{
+    vertical-align: middle;
+    color: #5F9EA0;
+}
+#content #cart .table tfoot{
+    font-size: 18px;
+    color: #5F9EA0;
+}
+.box .box-footer{
+    margin: 30px -20px 20px;
+    padding: 20px;
+    border-top: 1px solid #eeeeee;
+}
+.box .box-footer:before,
+.box .box-footer:after{
+    content: "";
+    display: table;
+}
+.box .box-footer:after{
+    clear: both;
+}
+.box .box-header{
+    background-color: #f7f7f7;
+    margin: -20px -20px 20px;
+    padding: 20px;
+    border-top: 1px solid #eeeeee;
+    color: #5F9EA0;
+}
+.box .text-muted{
+    color: #5F9EA0;
+}
+#content #order-summary table{
+    margin-top: 20px;
+    color: #5F9EA0;
+}
+#content #order-summary table td{
+    color: #5F9EA0;
+}
+#content #order-summary table tr.total td,
+#content #order-summary table tr.total th{
+    font-size: 18px;
+    color: #5F9EA0;
+    font-weight: 700;
 }

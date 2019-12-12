@@ -210,19 +210,18 @@
                    </div>
                </div>
                
-               <div class="box" id="details"><!-- box Begin -->
-                       
-                       <h4>Product Details</h4>
-                   <p>
-                       Nice sword for collecting. But it can easily be used for duels) 
-                   </p>
-                       <h4>Condition</h4>
-                       <ul>
-                           <li>Blunt</li>
-                           <li>Slightly Sharp</li>
-                           <li>Sharp</li>
-                       </ul>
-                       <hr> 
+               <div class="box info1" id="details">
+                  <h4>Product Details</h4>
+                  <p>
+                    Nice sword for collecting. But it can easily be used for duels) 
+                  </p>
+                   <h4>Condition</h4>
+                   <ul>
+                       <li>Blunt</li>
+                       <li>Slightly Sharp</li>
+                       <li>Sharp</li>
+                   </ul>
+                   <hr>
                </div>
                
                <div id="row same-heigh-row">
