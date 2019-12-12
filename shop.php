@@ -56,10 +56,10 @@
            <div class="navbar-collapse collapse" id="navigation">
                <div class="padding-nav">
                    <ul class="nav navbar-nav left">
-                       <li class="active">
+                       <li>
                            <a href="index.php">Home</a>
                        </li>
-                       <li>
+                       <li class="active">
                            <a href="shop.php">Shop</a>
                        </li>
                        <li>
@@ -97,124 +97,38 @@
                    </form>   
                </div>
            </div>
-       </div> 
-   </div>
-   <div class="container" id="slider">
-       <div class="col-md-12">
-           <div class="carousel slide" id="myCarousel" data-ride="carousel">
-               <ol class="carousel-indicators">
-                   <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
-                   <li data-target="#myCarousel" data-slide-to="1"></li>
-                   <li data-target="#myCarousel" data-slide-to="2"></li>
-                   <li data-target="#myCarousel" data-slide-to="3"></li> 
-               </ol>
-               <div class="carousel-inner">
-                   <div class="item active"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 1"> 
-                   </div>
-                   
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 2"> 
-                   </div>
-                   
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 3"> 
-                   </div> 
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 4"> 
-                   </div> 
-               </div>
-               <a href="#myCarousel" class="left carousel-control" data-slide="prev">
-                   <span class="glyphicon glyphicon-chevron-left"></span>
-                   <span class="sr-only">Previous</span> 
-               </a>
-               <a href="#myCarousel" class="right carousel-control" data-slide="next">
-                   <span class="glyphicon glyphicon-chevron-right"></span>
-                   <span class="sr-only">Next</span> 
-               </a>   
-           </div>
        </div>
        
    </div>
-   <div id="advantages">
+   
+   <div id="content">
        <div class="container">
-           <div class="same-height-row">
-               <div class="col-sm-4">
-                   <div class="box same-height">
-                       <div class="icon">
-                           <i class="fa fa-heart"></i> 
-                       </div>
-                       <h3><a href="#">Best Offer</a></h3>
-                       
-                       <p>Limited time offers </p>
-                   </div>
-               </div>
-               
-               <div class="col-sm-4">
-                   
-                   <div class="box same-height">
-                       
-                       <div class="icon">
-                           
-                           <i class="fa fa-tag"></i>
-                           
-                       </div>
-                       
-                       <h3><a href="#">Best Prices</a></h3>
-                       
-                       <p>Lower prices for better quality</p>
-                       
-                   </div>
-                   
-               </div>
-               
-               <div class="col-sm-4">
-                   
-                   <div class="box same-height">
-                       
-                       <div class="icon">
-                           
-                           <i class="fa fa-thumbs-up"></i>
-                           
-                       </div>
-                       
-                       <h3><a href="#">100% Original</a></h3>
-                       
-                       <p>Special limited items</p>
-                       
-                   </div>
-                   
-               </div>
+           <!--<div class="col-md-12">
+               <ul class="breadcrumb">
+                   <li>
+                       <a href="index.php">Home</a>
+                   </li>
+                   <li>
+                       Shop
+                   </li>
+               </ul>
+           </div> -->
+           <div class="col-md-3">
+           <?php 
+            
+            include("sidebar.php");
+            ?>
                
            </div>
-           
-       </div>
-       
-   </div>
-   
-   <div id="hot">
-       
-       <div class="box">
-           
-           <div class="container">
+           <div class="col-md-9">
+               <!--<div class="box">
+                   <h1>Shop</h1>
+                   <p>
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deleniti accusamus, consequuntur illum quasi ut. Voluptate a, ipsam repellendus ut fugiat minima? Id facilis itaque autem, officiis veritatis perferendis, quaerat!
+                   </p>
+               </div>  -->
                
-               <div class="col-md-12">
-                   
-                   <h2>
-                       Best Products
-                   </h2>
-                   
-               </div>
-               
-           </div>
-           
-       </div>
-       
-   </div>
-   
-   <div id="content" class="container">
-       
-       <div class="row">
+               <div class="row">
            <div class="col-sm-4 col-sm-6 single">
                <div class="product">
                    <a href="details.php"> 
@@ -246,7 +160,7 @@
            <div class="col-sm-4 col-sm-6 single">
                <div class="product">
                    <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1"> 
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"> 
                    </a> 
                    <div class="text">
                        <h3>
@@ -298,7 +212,7 @@
            <div class="col-sm-4 col-sm-6 single">
                <div class="product">
                    <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1"> 
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"> 
                    </a> 
                    <div class="text">
                        <h3>
@@ -322,7 +236,7 @@
            <div class="col-sm-4 col-sm-6 single">
                <div class="product">
                    <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1"> 
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"> 
                    </a> 
                    <div class="text">
                        <h3>
@@ -374,7 +288,7 @@
            <div class="col-sm-4 col-sm-6 single">
                <div class="product">
                    <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1"> 
+                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"> 
                    </a> 
                    <div class="text">
                        <h3>
@@ -424,15 +338,33 @@
            </div>
            
        </div>
-       
-   </div><!-- container Finish -->
-  
-  <?php 
+               
+               <center>
+                   <ul class="pagination">
+                       <li class="active;"><a href="#">First Page</a></li>
+                       <li><a href="#">1</a></li>
+                       <li><a href="#">2</a></li>
+                       <li><a href="#">3</a></li>
+                       <li><a href="#">4</a></li>
+                       <li><a href="#">5</a></li>
+                       <li><a href="#">Last Page</a></li>
+                   </ul>
+               </center>
+               
+           </div>
+           
+       </div>
+   </div>
+   
+   <?php 
     
     include("footer.php");
     
-  ?>
+    ?>
+    
     <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>  
+    <script src="js/bootstrap-337.min.js"></script>
+    
+    
 </body>
 </html>
