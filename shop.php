@@ -28,7 +28,7 @@
                        <a href="checkout.php">Login</a>
                    </li>
                    <li>
-                       <a href="customer_register.php">Register</a>
+                       <a href="register.php">Register</a>
                    </li> 
                </ul>
            </div>
@@ -66,7 +66,7 @@
                            <a href="cart.php">Shopping Cart</a>
                        </li>
                        <li>
-                           <a href="contact.php">Contact Us</a>
+                           <a href="contact.php">Contacts</a>
                        </li>
                         <li>
                            <a href="checkout.php">Account</a>
@@ -75,7 +75,7 @@
                </div>
                <a href="cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
-                   <span>4 Items In Your Cart</span> 
+                   <span>2 Items In Your Cart</span> 
                </a> 
                <div class="navbar-collapse collapse right">
                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">

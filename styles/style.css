@@ -364,13 +364,22 @@ body{
     clear: both;
 }
 .box .box-header{
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     margin: -20px -20px 20px;
     padding: 20px;
     border-top: 1px solid #eeeeee;
     color: #5F9EA0;
 }
+.box .box-header h2{
+     color: #5F9EA0;
+}
+.form-group{
+     color: #5F9EA0;
+}
 .box .text-muted{
+    color: #5F9EA0;
+}
+.box h2{
     color: #5F9EA0;
 }
 #content #order-summary table{
