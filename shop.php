@@ -22,7 +22,7 @@
                        <a href="cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="checkout.php">Account</a>
+                       <a href="customer/account.php">Account</a>
                    </li>
                    <li>
                        <a href="checkout.php">Login</a>
@@ -69,7 +69,7 @@
                            <a href="contact.php">Contacts</a>
                        </li>
                         <li>
-                           <a href="checkout.php">Account</a>
+                           <a href="customer/account.php">Account</a>
                        </li> 
                    </ul>
                </div>
@@ -290,19 +290,19 @@
            </div>
            </div>
            
-       </div>
+          </div>
                
-               <center>
-                   <ul class="pagination">
-                       <li class="active;"><a href="#">First Page</a></li>
-                       <li><a href="#">1</a></li>
-                       <li><a href="#">2</a></li>
-                       <li><a href="#">3</a></li>
-                       <li><a href="#">4</a></li>
-                       <li><a href="#">5</a></li>
-                       <li><a href="#">Last Page</a></li>
-                   </ul>
-               </center>
+           <center>
+               <ul class="pagination">
+                   <li class="active;"><a href="#">First Page</a></li>
+                   <li><a href="#">1</a></li>
+                   <li><a href="#">2</a></li>
+                   <li><a href="#">3</a></li>
+                   <li><a href="#">4</a></li>
+                   <li><a href="#">5</a></li>
+                   <li><a href="#">Last Page</a></li>
+               </ul>
+           </center>
                
            </div>
            

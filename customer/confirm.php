@@ -19,16 +19,16 @@
                <ul class="menu">
                    
                    <li>
-                       <a href="cart.php">Check Cart</a>
+                       <a href="../cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="customer/account.php">Account</a>
+                       <a href="account.php">Account</a>
                    </li>
                    <li>
                        <a href="checkout.php">Login</a>
                    </li>
-                   <li  class="active">
-                       <a href="register.php">Register</a>
+                   <li>
+                       <a href="../register.php">Register</a>
                    </li> 
                </ul>
            </div>
@@ -57,19 +57,19 @@
                <div class="padding-nav">
                    <ul class="nav navbar-nav left">
                        <li>
-                           <a href="index.php">Home</a>
+                           <a href="../index.php">Home</a>
                        </li>
                        <li>
-                           <a href="shop.php">Shop</a>
+                           <a href="../shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="cart.php">Shopping Cart</a>
+                           <a href="../cart.php">Shopping Cart</a>
                        </li>
                        <li>
-                           <a href="contact.php">Contacts</a>
+                           <a href="../contact.php">Contacts</a>
                        </li>
-                        <li>
-                           <a href="customer/account.php">Account</a>
+                        <li  class="active">
+                           <a href="account.php">Account</a>
                        </li> 
                    </ul>
                </div>
@@ -98,77 +98,69 @@
                </div>
            </div>
        </div>
-       
    </div>
    
    <div id="content">
        <div class="container">
            <div class="col-md-12">
-               <!--<ul class="breadcrumb">
-                   <li>
-                       <a href="index.php">Home</a>
-                   </li>
-                   <li>
-                       Shop
-                   </li>
-               </ul>  -->
                
            </div>
            <div class="col-md-3">
-        <?php  
-        include("sidebar.php");
-        ?>
+           <?php
+            include("sidebar1.php");
+            ?>
            </div>
            <div class="col-md-9">
                <div class="box">
-                   <div class="box-header1">
-                       <center>
-                           <h2>Create an account</h2>
-                       </center>
-                       <form action="register.php" method="post" enctype="multipart/form-data">
-                           <div class="form-group">
-                               <label>Name</label> 
-                               <input type="text" class="form-control" name="c_name" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Phone</label> 
-                               <input type="text" class="form-control" name="c_phone" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Email</label> 
-                               <input type="text" class="form-control" name="c_email" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Address</label> 
-                               <input type="text" class="form-control" name="c_address" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>City</label> 
-                               <input type="text" class="form-control" name="c_city" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Country</label> 
-                               <input type="text" class="form-control" name="c_country" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Password</label> 
-                               <input type="password" class="form-control" name="c_password" required> 
-                           </div>
-                           <div class="text-center"> 
-                               <button type="submit" name="register" class="btn btn-primary"> 
-                               <i class="fa fa-user-md"></i> Send Form 
-                               </button> 
-                           </div> 
-                       </form>
-                   </div>
+                   <h1 align="center"> Please confirm your payment</h1> 
+                   <form action="confirm.php" method="post" enctype="multipart/form-data">
+                       <div class="form-group">
+                         <label> Invoice №: </label>
+                          <input type="text" class="form-control" name="invoice_no" required> 
+                       </div>
+                       <div class="form-group">
+                         <label> Amount Sent: </label> 
+                          <input type="text" class="form-control" name="amount_sent" required> 
+                       </div>
+                       <div class="form-group">
+                         <label> Select Payment Mode: </label>
+                          
+                          <select name="payment_mode" class="form-control">
+                              <option> Select Payment Mode </option>
+                              <option> Credit Card </option>
+                              <option> PayPal </option>
+                              <option> Western Union </option> 
+                          </select>
+                       </div>
+                       <div class="form-group">
+                         <label> Transaction / Reference ID: </label> 
+                          <input type="text" class="form-control" name="ref_no" required> 
+                       </div>
+                       <div class="form-group">
+                         <label> PayPal: </label> 
+                          <input type="text" class="form-control" name="code" required> 
+                       </div>
+                       <div class="form-group">
+                         <label> Payment Date: </label> 
+                          <input type="text" class="form-control" name="date" required> 
+                       </div>
+                       <div class="text-center">
+                           <button class="btn btn-primary btn-lg">
+                               <i class="fa fa-user-md"></i> Confirm Payment 
+                           </button>
+                       </div>
+                   </form>
                </div>
            </div>
        </div>
-   </div> 
+   </div>
    <?php
-    include("footer.php");
-    ?> 
+    include("footer1.php");
+    ?>
+    
     <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>    
+    <script src="js/bootstrap-337.min.js"></script>
+    
+    
 </body>
 </html>

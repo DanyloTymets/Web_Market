@@ -22,7 +22,7 @@
                        <a href="cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="checkout.php">Account</a>
+                       <a href="customer/account.php">Account</a>
                    </li>
                    <li>
                        <a href="checkout.php">Login</a>
@@ -69,7 +69,7 @@
                            <a href="contact.php">Contacts</a>
                        </li>
                         <li>
-                           <a href="checkout.php">Account</a>
+                           <a href="customer/account.php">Account</a>
                        </li> 
                    </ul>
                </div>

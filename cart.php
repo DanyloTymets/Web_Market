@@ -22,7 +22,7 @@
                        <a href="cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="checkout.php">Account</a>
+                       <a href="customer/account.php">Account</a>
                    </li>
                    <li>
                        <a href="checkout.php">Login</a>
@@ -69,7 +69,7 @@
                            <a href="contact.php">Contacts</a>
                        </li>
                         <li>
-                           <a href="checkout.php">Account</a>
+                           <a href="customer/account.php">Account</a>
                        </li> 
                    </ul>
                </div>
@@ -116,7 +116,7 @@
                <div class="box">
                    <form action="cart.php" method="post" enctype="multipart/form-data">
                        <h1>Shopping Cart</h1>
-                       <p class="text-muted">You currently have 3 item(s) in your cart</p> 
+                       <p class="text-muted">You currently have 2 item(s) in your cart</p> 
                        <div class="table-responsive">
                            <table class="table">
                                <thead>

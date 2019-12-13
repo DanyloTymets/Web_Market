@@ -4,10 +4,10 @@
             <div class="col-sm-6 col-md-3">
                <h4>Pages</h4>
                 <ul>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a href="cart.php">Shopping Cart</a></li>
-                    <li><a href="contact.php">Contacts</a></li>
-                    <li><a href="customer/account.php">Account</a></li>
+                    <li><a href="../shop.php">Shop</a></li>
+                    <li><a href="../cart.php">Shopping Cart</a></li>
+                    <li><a href="../contact.php">Contacts</a></li>
+                    <li><a href="account.php">Account</a></li>
                 </ul>               
                 <hr class="hidden-md hidden-lg hidden-sm">
             </div>
