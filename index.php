@@ -1,3 +1,6 @@
+<?php 
+include("db.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,20 +112,30 @@
                    <li data-target="#myCarousel" data-slide-to="3"></li> 
                </ol>
                <div class="carousel-inner">
-                   <div class="item active"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 1"> 
-                   </div>
-                   
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 2"> 
-                   </div>
-                   
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 3"> 
-                   </div> 
-                   <div class="item"> 
-                       <img src="admin_area/slides_images/sova_sale.jpg" alt="Slider Image 4"> 
-                   </div> 
+                   <?php
+                   $get_slides = "select * from slider LIMIT 0,1";
+                   $run_slides = mysqli_query($con,$get_slides);
+                   while($row_slides=mysqli_fetch_array($run_slides)){
+                       $slide_name = $row_slides['slide_name'];
+                       $slide_image = $row_slides['slide_image'];
+                       echo "
+                       <div class='item active'>
+                       <img src='admin_area/slides_images/$slide_image'>
+                       </div>
+                       ";
+                   }
+                   $get_slides = "select * from slider LIMIT 1,3";
+                   $run_slides = mysqli_query($con,$get_slides);
+                   while($row_slides=mysqli_fetch_array($run_slides)){
+                       $slide_name = $row_slides['slide_name'];
+                       $slide_image = $row_slides['slide_image'];
+                       echo "
+                       <div class='item'>
+                       <img src='admin_area/slides_images/$slide_image'>
+                       </div>
+                       ";
+                   }
+                   ?>
                </div>
                <a href="#myCarousel" class="left carousel-control" data-slide="prev">
                    <span class="glyphicon glyphicon-chevron-left"></span>
@@ -229,7 +242,7 @@
                        
                        <p class="button">
                            
-                           <a href="details.php" class="btn btn-default">View Details</a>
+                           <a href="details.php" class="btn btn-primary">View Details</a>
                            
                            <a href="details.php" class="btn btn-primary">
                                
@@ -255,7 +268,7 @@
                        </h3> 
                        <p class="price">$0</p>
                        <p class="button"> 
-                           <a href="details.php" class="btn btn-default">View Details</a> 
+                           <a href="details.php" class="btn btn-primary">View Details</a> 
                            <a href="details.php" class="btn btn-primary"> 
                                <i class="fa fa-shopping-cart">
                                    Add To Cart
@@ -281,7 +294,7 @@
                        
                        <p class="button">
                            
-                           <a href="details.php" class="btn btn-default">View Details</a>
+                           <a href="details.php" class="btn btn-primary">View Details</a>
                            
                            <a href="details.php" class="btn btn-primary">
                                
@@ -309,7 +322,7 @@
                        
                        <p class="button">
                            
-                           <a href="details.php" class="btn btn-default">View Details</a>
+                           <a href="details.php" class="btn btn-primary">View Details</a>
                            
                            <a href="details.php" class="btn btn-primary">
                                
@@ -335,7 +348,7 @@
                        </h3> 
                        <p class="price">$0</p>
                        <p class="button"> 
-                           <a href="details.php" class="btn btn-default">View Details</a> 
+                           <a href="details.php" class="btn btn-primary">View Details</a> 
                            <a href="details.php" class="btn btn-primary"> 
                                <i class="fa fa-shopping-cart">
                                    Add To Cart
@@ -361,7 +374,7 @@
                        
                        <p class="button">
                            
-                           <a href="details.php" class="btn btn-default">View Details</a>
+                           <a href="details.php" class="btn btn-primary">View Details</a>
                            
                            <a href="details.php" class="btn btn-primary">
                                
