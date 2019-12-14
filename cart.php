@@ -190,48 +190,22 @@
                        <div class="box-footer">
                            <div class="pull-left">
                                <a href="index.php" class="btn btn-default">
-                                   <i class="fa fa-chevron-left"></i> Continue Shopping 
+                                   <i class="fa fa-chevron-left"></i> Return to the home 
                                </a>
                            </div>
                            <div class="pull-right">
                                <button type="submit" name="update" value="Update Cart" class="btn btn-default">
-                                   <i class="fa fa-refresh"></i> Update Cart 
+                                   <i class="fa fa-refresh"></i> Update
                                </button>
                                <a href="checkout.php" class="btn btn-primary"> 
-                                   Proceed Checkout <i class="fa fa-chevron-right"></i> 
+                                   Continue Checkout <i class="fa fa-chevron-right"></i> 
                                </a> 
                            </div> 
                        </div> 
                    </form> 
                </div> 
                <div id="row same-heigh-row">
-                   <div class="col-md-3 col-sm-6">
-                       <div class="box same-height headline">
-                           <h3 class="text-center">Also You May be Interested In</h3>
-                       </div>
-                   </div>
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                       <div class="product same-height">
-                           <a href="details.php">
-                               <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Barbarian sword</a></h3>
-                                <p class="price">$280</p>
-                            </div>
-                        </div>
-                   </div>
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                       <div class="product same-height">
-                           <a href="details.php">
-                               <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Goblin sword</a></h3>
-                                <p class="price">$250</p>
-                            </div>
-                        </div>
-                   </div>
+                   
                </div>
            </div>
            <div class="col-md-3">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 14 2019 р., 14:55
+-- Час створення: Гру 14 2019 р., 20:00
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -68,9 +68,10 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 (1, 1, 0, '2019-12-14 13:03:22', 'Barbarian Sword', 'product-1.jpg', 280, 'Sword', '<p>Nice sword for collecting. But it can easily be used for duels)</p>'),
 (2, 1, 0, '2019-12-14 12:33:29', 'Goblin Sword', 'product-2.jpg', 250, 'Sword', '<p>Nice masterwork piece.</p>'),
 (3, 1, 0, '2019-12-14 12:36:09', 'Viking Sword', 'viking-crop-1.jpg', 300, 'Sword', '<p>One of the best replicas)</p>'),
-(4, 2, 0, '2019-12-14 13:06:58', 'Longclaw Sword', 'longclaw-sword.jpg', 290, 'Sword', '<p>Film copy.</p>'),
-(5, 1, 0, '2019-12-14 13:04:14', 'Medieval Shield', 'Medieval-shield.jpg', 250, 'Shield', '<p>Nice adding for sword)</p>'),
-(6, 1, 0, '2019-12-14 13:05:02', 'Medieval Armor', 'Medieval-armor.jpg', 500, 'Armor', '<p>Classic medieval armor replica.</p>');
+(4, 1, 0, '2019-12-14 18:07:57', 'Longclaw Sword', 'longclaw-sword.jpg', 290, 'Sword', '<p>Film copy.</p>'),
+(5, 4, 0, '2019-12-14 18:08:08', 'Medieval Shield', 'Medieval-shield.jpg', 250, 'Shield', '<p>Nice adding for sword)</p>'),
+(6, 3, 0, '2019-12-14 18:08:20', 'Medieval Armor', 'Medieval-armor.jpg', 500, 'Armor', '<p>Classic medieval armor replica.</p>'),
+(7, 3, 0, '2019-12-14 18:08:27', 'Medieval Women Armor', 'Medieval-girl-armor.jpg', 450, 'Armor', '<p>Egyptian medieval female armor.</p>');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,7 @@ ALTER TABLE `customer_categories`
 -- AUTO_INCREMENT для таблиці `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблиці `product_categories`

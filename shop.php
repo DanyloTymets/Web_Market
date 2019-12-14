@@ -1,3 +1,7 @@
+<?php
+include("db.php"); 
+include_once("functions/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,169 +133,57 @@
                </div>  -->
                
                <div class="row">
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Barbarian sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       
-                       <p class="button">
-                           
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           
-                           <a href="details.php" class="btn btn-primary">
-                               
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i> 
-                           </a> 
-                       </p>      
-                   </div> 
-               </div> 
-           </div>
-           
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Goblin sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       <p class="button"> 
-                           <a href="details.php" class="btn btn-default">View Details</a> 
-                           <a href="details.php" class="btn btn-primary"> 
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i>
-                           </a>
-                       </p>
-                   </div>
-               </div>
-           </div>
-           
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Barbarian sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       
-                       <p class="button">
-                           
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           
-                           <a href="details.php" class="btn btn-primary">
-                               
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i> 
-                           </a> 
-                       </p>      
-                   </div> 
-               </div> 
-           </div>
-           
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Barbarian sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       
-                       <p class="button">
-                           
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           
-                           <a href="details.php" class="btn btn-primary">
-                               
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i> 
-                           </a> 
-                       </p>      
-                   </div> 
-               </div> 
-           </div>
-           
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 1"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Goblin sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       <p class="button"> 
-                           <a href="details.php" class="btn btn-default">View Details</a> 
-                           <a href="details.php" class="btn btn-primary"> 
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i>
-                           </a>
-                       </p>
-                   </div>
-               </div>
-           </div>
-           
-           <div class="col-sm-4 col-sm-6 single">
-               <div class="product">
-                   <a href="details.php"> 
-                       <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1"> 
-                   </a> 
-                   <div class="text">
-                       <h3>
-                           <a href="details.php">
-                               Barbarian sword
-                           </a>
-                       </h3> 
-                       <p class="price">$0</p>
-                       
-                       <p class="button">
-                           
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           
-                           <a href="details.php" class="btn btn-primary">
-                               
-                               <i class="fa fa-shopping-cart">
-                                   Add To Cart
-                               </i> 
-                           </a> 
-                       </p>      
-                   </div> 
-               </div> 
-           </div>
-           </div>
-           
-          </div>
-               
+                   <?php
+                      if(!isset($_GET['p_cat'])){
+                       if(!isset($_GET['cat'])){
+                          $per_page=6;
+                          if(isset($_GET['page'])){
+                              $page = $_GET['page'];
+                          }else{
+                              $page=1;
+                          }
+                          $start_from = ($page-1) * $per_page;
+                          $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
+                          $run_products = mysqli_query($con,$get_products);
+                          while($row_products=mysqli_fetch_array($run_products)){
+                              $pro_id = $row_products['product_id'];
+                              $pro_title = $row_products['product_title'];
+                              $pro_price = $row_products['product_price'];
+                              $pro_img1 = $row_products['product_img1'];
+                              echo "
+                                  <div class='col-md-4 col-sm-6 center-responsive'>
+                                      <div class='product'>
+                                          <a href='details.php?pro_id=$pro_id'>
+                                              <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                                          </a>
+                                          <div class='text'>
+                                              <h3>
+                                                  <a href='details.php?pro_id=$pro_id'> $pro_title </a>
+                                              </h3>
+                                              <p class='price'>
+                                                  $$pro_price
+                                              </p>
+                                              <p class='buttons'>
+                                                <center>
+                                                  <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                                                      View Details
+                                                  </a>
+                                                  <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                                                      <i class='fa fa-shopping-cart'> Add To Cart </i> 
+                                                  </a>
+                                                </center>
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              ";
+                          }
+                        }   
+                      }
+                   ?>
+             </div>
+        </div>
+            
            <center>
                <ul class="pagination">
                    <li class="active;"><a href="#">First Page</a></li>
@@ -303,7 +195,9 @@
                    <li><a href="#">Last Page</a></li>
                </ul>
            </center>
-               
+           <?php 
+              getPCategoriesProduct();
+            ?>
            </div>
            
        </div>

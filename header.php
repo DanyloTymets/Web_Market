@@ -1,3 +1,7 @@
+<?php 
+include("db.php");
+include("functions/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +23,16 @@
                <ul class="menu">
                    
                    <li>
-                       <a href="../cart.php">Check Cart</a>
+                       <a href="cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="account.php">Account</a>
+                       <a href="customer/account.php">Account</a>
                    </li>
                    <li>
                        <a href="checkout.php">Login</a>
                    </li>
                    <li>
-                       <a href="../register.php">Register</a>
+                       <a href="register.php">Register</a>
                    </li> 
                </ul>
            </div>
@@ -37,7 +41,7 @@
    <div id="navbar" class="navbar navbar-default">
        <div class="container">
            <div class="navbar-header">
-               <a href="../index.php" class="navbar-brand home">
+               <a href="index.php" class="navbar-brand home">
                    <img src="images/Webshop-logo.png" alt="Webshop Logo" class="hidden-xs">
                    <img src="images/Webshop-logo-mobile.png" alt="Webshop Logo Mobile" class="visible-xs"> 
                </a>
@@ -56,24 +60,24 @@
            <div class="navbar-collapse collapse" id="navigation">
                <div class="padding-nav">
                    <ul class="nav navbar-nav left">
-                       <li>
-                           <a href="../index.php">Home</a>
+                       <li class="active">
+                           <a href="index.php">Home</a>
                        </li>
                        <li>
-                           <a href="../shop.php">Shop</a>
+                           <a href="shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="../cart.php">Shopping Cart</a>
+                           <a href="cart.php">Shopping Cart</a>
                        </li>
                        <li>
-                           <a href="../contact.php">Contacts</a>
+                           <a href="contact.php">Contacts</a>
                        </li>
-                        <li  class="active">
-                           <a href="account.php">Account</a>
+                        <li>
+                           <a href="customer/account.php">Account</a>
                        </li> 
                    </ul>
                </div>
-               <a href="../cart.php" class="btn navbar-btn btn-primary right">
+               <a href="cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
                    <span>2 Items In Your Cart</span> 
                </a> 
@@ -97,65 +101,7 @@
                    </form>   
                </div>
            </div>
-       </div>
-       
+       </div> 
    </div>
-   
-   <div id="content">
-       <div class="container">
-           <!--<div class="col-md-12">
-               <ul class="breadcrumb">
-                   <li>
-                       <a href="index.php">Home</a>
-                   </li>
-                   <li>
-                       Shop
-                   </li>
-               </ul>
-           </div> -->
-           <div class="col-md-3">
-           <?php 
-            
-            include("sidebar1.php");
-            ?>
-               
-           </div>
-           <div class="col-md-9">
-               <div class="box"> 
-                 <?php
-                 if (isset($_GET['edit_acc'])){
-                     include("edit_acc.php");
-                 }
-                 ?>
-                 <?php
-                 if (isset($_GET['change_pass'])){
-                     include("change_pass.php");
-                 }
-                 ?>
-                 <?php
-                 if (isset($_GET['orders'])){
-                     include("orders.php");
-                 }
-                 ?>
-                 <?php
-                 if (isset($_GET['delete_account'])){
-                     include("delete_account.php");
-                 }
-                 ?>
-               </div>
-           </div>
-       </div>
-   </div>
-   
-   <?php 
-    
-    include("footer1.php");
-    
-    ?>
-    
-    <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>
-    
-    
-</body>
-</html>
+  </div><!-- container Finish -->
+</div><!-- navbar navbar-default Finish -->

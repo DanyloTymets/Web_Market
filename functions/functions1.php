@@ -1,6 +1,6 @@
 <?php
 $db = mysqli_connect("localhost","root","","TD-Shop");
-function getProduct(){ 
+function getPro2(){ 
     global $db; 
     $get_products = "select * from products order by 1 DESC LIMIT 0,6"; 
     $run_products = mysqli_query($db,$get_products); 
@@ -38,7 +38,7 @@ function getProduct(){
         "; 
     } 
 }
-function getPCategories(){
+function getPCategories1(){
     global $db;
     $get_p_cats = "select * from product_categories";
     $run_p_cats = mysqli_query($db,$get_p_cats);
@@ -53,7 +53,7 @@ function getPCategories(){
         "; 
     }
 }
-function getCategories(){
+function getCategories1(){
     global $db;
     $get_cats = "select * from customer_categories";
     $run_cats = mysqli_query($db,$get_cats);
@@ -68,7 +68,7 @@ function getCategories(){
         "; 
     }
 }
-function getPCategoriesProduct(){
+function getPCategoriesProduct1(){
     global $db;
     if(isset($_GET['p_cat'])){
         $p_cat_id = $_GET['p_cat'];
