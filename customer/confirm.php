@@ -16,7 +16,7 @@ include_once("functions/functions.php");
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-               <a href="../checkout.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
+               <a href="../cart.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
            </div>
            <div class="col-md-6">
                
