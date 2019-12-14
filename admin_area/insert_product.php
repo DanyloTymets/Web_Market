@@ -116,3 +116,26 @@ include("includes/db.php");
     <script>tinymce.init({ selector:'textarea'});</script>
 </body>
 </html>
+
+<?php 
+
+if(isset($_POST['submit'])){
+    
+    $product_title = $_POST['product_title'];
+    $product_cat = $_POST['product_cat'];
+    $cat = $_POST['cat'];
+    $product_price = $_POST['product_price'];
+    $product_keywords = $_POST['product_keywords'];
+    $product_desc = $_POST['product_desc'];
+    $product_img1 = $_FILES['product_img1']['name'];
+    $temp_name1 = $_FILES['product_img1']['tmp_name'];
+    
+    move_uploaded_file($temp_name1,"product_images/$product_img1");
+    $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_price,product_keywords,product_desc) values ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_price','$product_keywords','$product_desc')";
+    $run_product = mysqli_query($con,$insert_product);
+    if($run_product){
+        echo "<script>alert('Product has been added sucessfully')</script>";
+        echo "<script>window.open('insert_product.php','_self')</script>";
+    }
+}
+?>
