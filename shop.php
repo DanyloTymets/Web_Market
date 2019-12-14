@@ -197,6 +197,7 @@ include_once("functions/functions.php");
            </center>
            <?php 
               getPCategoriesProduct();
+              getCCategoriesProduct();
             ?>
            </div>
            

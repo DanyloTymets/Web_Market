@@ -123,8 +123,7 @@
                                    <tr>
                                        <th colspan="2">Product</th>
                                        <th>Quantity</th>
-                                       <th>Unit Price</th>
-                                       <th>Condition</th>
+                                       <th>Price per one</th>
                                        <th colspan="1">Delete</th>
                                        <th colspan="2">Sub-Total</th> 
                                    </tr>
@@ -142,10 +141,7 @@
                                        </td> 
                                        <td> 
                                            $280
-                                       </td> 
-                                       <td> 
-                                           Blunt
-                                       </td> 
+                                       </td>
                                        <td> 
                                            <input type="checkbox" name="remove[]"> 
                                        </td> 
@@ -167,10 +163,7 @@
                                        </td> 
                                        <td>  
                                            $250
-                                       </td> 
-                                       <td> 
-                                           Sharp
-                                       </td> 
+                                       </td>
                                        <td> 
                                            <input type="checkbox" name="remove[]"> 
                                        </td> 

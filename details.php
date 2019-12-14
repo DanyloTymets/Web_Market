@@ -1,3 +1,7 @@
+<?php
+include("db.php"); 
+include_once("functions/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +103,25 @@
            </div>
        </div> 
    </div>
-   
+   <?php 
+
+    if(isset($_GET['pro_id'])){
+        $product_id = $_GET['pro_id'];
+        $get_product = "select * from products where product_id='$product_id'";
+        $run_product = mysqli_query($con,$get_product);
+        $row_product = mysqli_fetch_array($run_product);
+        $p_cat_id = $row_product['p_cat_id'];
+        $pro_title = $row_product['product_title'];
+        $pro_price = $row_product['product_price'];
+        $pro_desc = $row_product['product_desc'];
+        $pro_img1 = $row_product['product_img1'];
+        $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+        $run_p_cat = mysqli_query($con,$get_p_cat);
+        $row_p_cat = mysqli_fetch_array($run_p_cat);
+        $p_cat_title = $row_p_cat['p_cat_title'];
+    }
+
+    ?>
    <div id="content">
        <div class="container">
            <div class="col-md-12">
@@ -130,13 +152,13 @@
                                </ol>
                                <div class="carousel-inner">
                                    <div class="item active">
-                                       <center><img class="img-responsive" src="admin_area/product_images/Product-1.jpg" alt="Product 1"></center>
+                                       <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product 1"></center>
                                    </div>
                                    <div class="item">
-                                       <center><img class="img-responsive" src="admin_area/product_images/Product-1.jpg" alt="Product 1"></center>
+                                       <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product 1"></center>
                                    </div>
                                    <div class="item">
-                                       <center><img class="img-responsive" src="admin_area/product_images/Product-1.jpg" alt="Product 1"></center>
+                                       <center><img class="img-responsive" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product 1"></center>
                                    </div>
                                </div>
                                
@@ -154,9 +176,9 @@
                    </div>
                    <div class="col-sm-6">
                        <div class="box">
-                           <h1 class="text-center">Barbarian sword</h1>
+                           <h1 class="text-center"><?php echo $pro_title; ?></h1>
                            
-                           <form action="details.php" class="form-horizontal" method="post">
+                           <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post">
                                <div class="form-group">
                                    <label for="" class="col-md-5 control-label">Products Quantity</label>
                                    <div class="col-md-7">
@@ -169,19 +191,7 @@
                                            </select>
                                     </div>
                                </div>
-                               
-                               <div class="form-group">
-                                   <label class="col-md-5 control-label">Product Condition</label>
-                                   <div class="col-md-7">
-                                       <select name="product_size" class="form-control">
-                                           <option>Select a Condition</option>
-                                           <option>Blunt</option>
-                                           <option>Slightly Sharp</option>
-                                           <option>Sharp</option>
-                                       </select>
-                                   </div>
-                               </div>
-                               <p class="price">$280</p>
+                               <p class="price">$ <?php echo $pro_price; ?></p>
                                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
                            </form>
                        </div>
@@ -213,15 +223,8 @@
                <div class="box info1" id="details">
                   <h4>Product Details</h4>
                   <p>
-                    Nice sword for collecting. But it can easily be used for duels) 
-                  </p>
-                   <h4>Condition</h4>
-                   <ul>
-                       <li>Blunt</li>
-                       <li>Slightly Sharp</li>
-                       <li>Sharp</li>
-                   </ul>
-                   <hr>
+                    <?php echo $pro_desc; ?> 
+                  </p> 
                </div>
                
                <div id="row same-heigh-row">
@@ -230,28 +233,29 @@
                            <h3 class="text-center">Also You May be Interested In</h3>
                        </div>
                    </div>
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                       <div class="product same-height">
-                           <a href="details.php">
-                               <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Barbarian sword</a></h3>
-                                <p class="price">$280</p>
+                   <?php
+                    $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+                    $run_products = mysqli_query($con,$get_products);
+                   while($row_products=mysqli_fetch_array($run_products)){
+                       $pro_id = $row_products['product_id'];
+                       $pro_title = $row_products['product_title'];
+                       $pro_img1 = $row_products['product_img1'];
+                       $pro_price = $row_products['product_price'];
+                       echo "
+                        <div class='col-md-3 col-sm-6 center-responsive'>
+                            <div class='product same-height'>
+                                <a href='details.php?pro_id=$pro_id'>
+                                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                                </a>
+                                <div class='text'>
+                                    <h3> <a href='details.php?pro_id=$pro_id'> $pro_title </a> </h3>
+                                    <p class='price'> $ $pro_price </p>
+                                </div>
                             </div>
                         </div>
-                   </div>
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                       <div class="product same-height">
-                           <a href="details.php">
-                               <img class="img-responsive" src="admin_area/product_images/product-2.jpg" alt="Product 2">
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Goblin sword</a></h3>
-                                <p class="price">$250</p>
-                            </div>
-                        </div>
-                   </div>
+                       ";
+                   }
+                   ?>
                </div>
            </div>
        </div>
