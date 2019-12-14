@@ -16,7 +16,7 @@ include_once("functions/functions.php");
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-               <a href="checkout.php">No Items In Your Cart | Total Price: $0 </a>
+               <a href="checkout.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
            </div>
            <div class="col-md-6">
                
@@ -79,7 +79,7 @@ include_once("functions/functions.php");
                </div>
                <a href="cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
-                   <span> 2 Items In Your Cart</span> 
+                   <span> <?php items(); ?> Items in cart </span> 
                </a> 
                <div class="navbar-collapse collapse right">
                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">
@@ -177,8 +177,8 @@ include_once("functions/functions.php");
                    <div class="col-sm-6">
                        <div class="box">
                            <h1 class="text-center"><?php echo $pro_title; ?></h1>
-                           
-                           <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post">
+                           <?php sendToCart(); ?>
+                           <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post">
                                <div class="form-group">
                                    <label for="" class="col-md-5 control-label">Products Quantity</label>
                                    <div class="col-md-7">
@@ -234,7 +234,7 @@ include_once("functions/functions.php");
                        </div>
                    </div>
                    <?php
-                    $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+                    $get_products = "select * from products order by rand() DESC LIMIT 0,3";
                     $run_products = mysqli_query($con,$get_products);
                    while($row_products=mysqli_fetch_array($run_products)){
                        $pro_id = $row_products['product_id'];

@@ -1,3 +1,7 @@
+<?php 
+include("db.php");
+include_once("functions/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,7 @@
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-               <a href="checkout.php">No Items In Your Cart | Total Price: $0 </a>
+               <a href="checkout.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
            </div>
            <div class="col-md-6">
                
@@ -75,7 +79,7 @@
                </div>
                <a href="cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
-                   <span>2 Items In Your Cart</span> 
+                   <span><?php items(); ?> Items in cart </span> 
                </a> 
                <div class="navbar-collapse collapse right">
                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">

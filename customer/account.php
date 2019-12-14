@@ -1,3 +1,7 @@
+<?php 
+include("includes/db.php");
+include_once("functions/functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,7 @@
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-               <a href="checkout.php">No Items In Your Cart | Total Price: $0 </a>
+               <a href="../checkout.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
            </div>
            <div class="col-md-6">
                
@@ -25,7 +29,7 @@
                        <a href="account.php">Account</a>
                    </li>
                    <li>
-                       <a href="checkout.php">Login</a>
+                       <a href="../checkout.php">Login</a>
                    </li>
                    <li>
                        <a href="../register.php">Register</a>
@@ -56,7 +60,7 @@
            <div class="navbar-collapse collapse" id="navigation">
                <div class="padding-nav">
                    <ul class="nav navbar-nav left">
-                       <li>
+                       <li >
                            <a href="../index.php">Home</a>
                        </li>
                        <li>
@@ -68,14 +72,14 @@
                        <li>
                            <a href="../contact.php">Contacts</a>
                        </li>
-                        <li  class="active">
+                        <li class="active">
                            <a href="account.php">Account</a>
                        </li> 
                    </ul>
                </div>
                <a href="../cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
-                   <span>2 Items In Your Cart</span> 
+                   <span><?php items(); ?> Items in cart </span> 
                </a> 
                <div class="navbar-collapse collapse right">
                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">
@@ -97,10 +101,8 @@
                    </form>   
                </div>
            </div>
-       </div>
-       
-   </div>
-   
+       </div> 
+   </div> 
    <div id="content">
        <div class="container">
            <!--<div class="col-md-12">
