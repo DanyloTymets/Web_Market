@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 14 2019 р., 22:06
+-- Час створення: Гру 15 2019 р., 13:29
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -39,8 +39,32 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
-(5, '::1', 1),
 (3, '::1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `customers`
+--
+
+CREATE TABLE `customers` (
+  `customer_id` int(10) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `customer_phone` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `customer_address` text NOT NULL,
+  `customer_city` text NOT NULL,
+  `customer_country` text NOT NULL,
+  `customer_pass` varchar(255) NOT NULL,
+  `customer_ip` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_phone`, `customer_email`, `customer_address`, `customer_city`, `customer_country`, `customer_pass`, `customer_ip`) VALUES
+(1, 'user1', '+380684648165', 'user1@gmail.com', 'address1', 'city1', 'country1', 'user1', '::1');
 
 -- --------------------------------------------------------
 
@@ -142,6 +166,12 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 --
 
 --
+-- Індекси таблиці `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
 -- Індекси таблиці `customer_categories`
 --
 ALTER TABLE `customer_categories`
@@ -168,6 +198,12 @@ ALTER TABLE `slider`
 --
 -- AUTO_INCREMENT для збережених таблиць
 --
+
+--
+-- AUTO_INCREMENT для таблиці `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблиці `customer_categories`

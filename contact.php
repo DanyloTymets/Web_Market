@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include("db.php");
 include_once("functions/functions.php");
 ?>
@@ -16,7 +17,16 @@ include_once("functions/functions.php");
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-               <a href="cart.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
+            <a href="#" class="btn btn-success btn-primary">
+                   <?php
+                   if(!isset($_SESSION['customer_email'])){
+                       echo "Welcome: Guest";
+                   }else{
+                       echo "Welcome: " . $_SESSION['customer_email'] . "";
+                   }
+                   ?>
+               </a>
+               <a href="checkout.php" style="color:white"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
            </div>
            <div class="col-md-6">
                
@@ -29,7 +39,15 @@ include_once("functions/functions.php");
                        <a href="customer/account.php">Account</a>
                    </li>
                    <li>
-                       <a href="checkout.php">Login</a>
+                    <a href="checkout.php">
+                     <?php
+                     if(!isset($_SESSION['customer_email'])){
+                          echo "<a href='checkout.php'> Login </a>";
+                         }else{
+                          echo " <a href='logout.php'> Log Out </a> ";
+                         }
+                     ?>
+                     </a>
                    </li>
                    <li>
                        <a href="register.php">Register</a>
@@ -155,6 +173,23 @@ include_once("functions/functions.php");
                                </button> 
                            </div> 
                        </form>
+                       <?php
+                       if(isset($_POST['submit'])){
+                           $sender_name = $_POST['name'];
+                           $sender_email = $_POST['email'];
+                           $sender_subject = $_POST['subject'];
+                           $sender_message = $_POST['message'];
+                           $receiver_email = "monopolysobaka1@gmail.com";
+                           mail($receiver_email,$sender_name,$sender_subject,$sender_message,$sender_email);
+                           
+                           $email = $_POST['email'];
+                           $subject = "Thx for sending  message";
+                           $msg = "We will reply u shortly.";
+                           $from = "monopolysobaka1@gmail.com";
+                           mail($email,$subject,$msg,$from);
+                           echo "<h2 align='center'> Your message has sent sucessfully </h2>";
+                       }
+                       ?>
                    </div>
                </div>
            </div>

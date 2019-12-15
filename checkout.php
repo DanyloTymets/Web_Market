@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include("db.php");
+include("db.php"); 
 include_once("functions/functions.php");
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ include_once("functions/functions.php");
    <div id="top">
        <div class="container">
            <div class="col-md-6 offer">
-                <a href="#" class="btn btn-success btn-primary">
+            <a href="#" class="btn btn-success btn-primary">
                    <?php
                    if(!isset($_SESSION['customer_email'])){
                        echo "Welcome: Guest";
@@ -38,8 +38,8 @@ include_once("functions/functions.php");
                    <li>
                        <a href="customer/account.php">Account</a>
                    </li>
-                   <li>
-                     <a href="checkout.php">
+                   <li class="active">
+                    <a href="checkout.php">
                      <?php
                      if(!isset($_SESSION['customer_email'])){
                           echo "<a href='checkout.php'> Login </a>";
@@ -49,7 +49,7 @@ include_once("functions/functions.php");
                      ?>
                      </a>
                    </li>
-                   <li  class="active">
+                   <li>
                        <a href="register.php">Register</a>
                    </li> 
                </ul>
@@ -97,7 +97,7 @@ include_once("functions/functions.php");
                </div>
                <a href="cart.php" class="btn navbar-btn btn-primary right">
                    <i class="fa fa-shopping-cart"></i> 
-                   <span><?php items(); ?> Items in cart </span> 
+                   <span> <?php items(); ?> Items in cart </span> 
                </a> 
                <div class="navbar-collapse collapse right">
                    <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search">
@@ -119,107 +119,34 @@ include_once("functions/functions.php");
                    </form>   
                </div>
            </div>
-       </div>
-       
-   </div>
-   
+       </div> 
+   </div> 
    <div id="content">
        <div class="container">
            <div class="col-md-12">
-               <!--<ul class="breadcrumb">
-                   <li>
-                       <a href="index.php">Home</a>
-                   </li>
-                   <li>
-                       Shop
-                   </li>
-               </ul>  -->
-               
            </div>
            <div class="col-md-3">
-        <?php  
-        include("sidebar.php");
-        ?>
-           </div>
-           <div class="col-md-9">
-               <div class="box">
-                   <div class="box-header1">
-                       <center>
-                           <h2>Create an account</h2>
-                       </center>
-                       <form action="register.php" method="post" enctype="multipart/form-data">
-                           <div class="form-group">
-                               <label>Name</label> 
-                               <input type="text" class="form-control" name="c_name" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Phone</label> 
-                               <input type="text" class="form-control" name="c_phone" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Email</label> 
-                               <input type="text" class="form-control" name="c_email" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Address</label> 
-                               <input type="text" class="form-control" name="c_address" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>City</label> 
-                               <input type="text" class="form-control" name="c_city" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Country</label> 
-                               <input type="text" class="form-control" name="c_country" required> 
-                           </div>
-                           <div class="form-group">
-                               <label>Password</label> 
-                               <input type="password" class="form-control" name="c_password" required> 
-                           </div>
-                           <div class="text-center"> 
-                               <button type="submit" name="register_user" class="btn btn-primary"> 
-                               <i class="fa fa-user-md"></i> Send Form 
-                               </button> 
-                           </div> 
-                       </form>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div> 
+   <?php
+    include("sidebar.php");
+    ?> 
+     </div>
+     <div class="col-md-9">
+       <?php  
+       if(!isset($_SESSION['customer_email'])){ 
+           include("customer/customer_login.php"); 
+       }else{ 
+           include("payment_options.php"); 
+       }
+       
+       ?>
+       
+     </div>
+   </div>
+  </div>
    <?php
     include("footer.php");
     ?> 
     <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>    
+    <script src="js/bootstrap-337.min.js"></script> 
 </body>
 </html>
-
-
-<?php 
-
-if(isset($_POST['register_user'])){
-    $c_name = $_POST['c_name'];
-    $c_phone = $_POST['c_phone'];
-    $c_email = $_POST['c_email'];
-    $c_address = $_POST['c_address'];
-    $c_city = $_POST['c_city'];
-    $c_country = $_POST['c_country'];
-    $c_password = $_POST['c_password'];
-    $c_ip = getIpFunc();
-    $insert_customer = "insert into customers (customer_name,customer_phone,customer_email,customer_address,customer_city,customer_country,customer_pass,customer_ip) values ('$c_name','$c_phone','$c_email','$c_address','$c_city','$c_country','$c_password','$c_ip')";
-    $run_customer = mysqli_query($con,$insert_customer);
-    $sel_cart = "select * from cart where ip_add='$c_ip'";
-    $run_cart = mysqli_query($con,$sel_cart);
-    $check_cart = mysqli_num_rows($run_cart);
-    if($check_cart>0){
-        $_SESSION['customer_email']=$c_email;
-        echo "<script>alert('Account was created')</script>";
-        echo "<script>window.open('checkout.php','_self')</script>";
-    }else{
-        $_SESSION['customer_email']=$c_email;
-        echo "<script>alert('Account was created')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
-    } 
-}
-?>
