@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 15 2019 р., 16:05
+-- Час створення: Гру 15 2019 р., 19:16
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -57,7 +57,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_phone`, `customer_email`, `customer_address`, `customer_city`, `customer_country`, `customer_pass`, `customer_ip`) VALUES
-(1, 'user1', '+380684648165', 'user1@gmail.com', 'address1', 'city1', 'country1', 'user1', '::1');
+(1, 'user1', '+3809756452', 'user1@gmail.com', 'address', 'city', 'country', 'user', '::1');
 
 -- --------------------------------------------------------
 
@@ -100,9 +100,33 @@ CREATE TABLE `customer_orders` (
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `qty`, `order_date`, `price`, `order_status`, `invoice_no`) VALUES
-(1, 1, 1, '2019-12-15', 300, 'pending', 1086946780),
-(2, 1, 1, '2019-12-15', 500, 'pending', 1086946780),
+(1, 1, 1, '2019-12-15', 300, 'Complete', 1086946780),
+(2, 1, 1, '2019-12-15', 500, 'Complete', 1086946780),
 (3, 1, 2, '2019-12-15', 500, 'pending', 1086946780);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `payments`
+--
+
+CREATE TABLE `payments` (
+  `payment_id` int(10) NOT NULL,
+  `invoice_no` int(10) NOT NULL,
+  `amount` int(10) NOT NULL,
+  `payment_option` text NOT NULL,
+  `ref_id` int(10) NOT NULL,
+  `code` int(10) NOT NULL,
+  `payment_date` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `payments`
+--
+
+INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_option`, `ref_id`, `code`, `payment_date`) VALUES
+(1, 1086946780, 0, 'Select Payment Mode', 123, 321, '15/12/2019'),
+(2, 1086946780, 500, 'Credit Card', 1124, 651511, '15/12/2019');
 
 -- --------------------------------------------------------
 
@@ -124,8 +148,8 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `order_status`) VALUES
-(1, 1, 1086946780, '3', 1, 'pending'),
-(2, 1, 1086946780, '6', 1, 'pending'),
+(1, 1, 1086946780, '3', 1, 'Complete'),
+(2, 1, 1086946780, '6', 1, 'Complete'),
 (3, 1, 1086946780, '5', 2, 'pending');
 
 -- --------------------------------------------------------
@@ -226,6 +250,12 @@ ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
+-- Індекси таблиці `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`payment_id`);
+
+--
 -- Індекси таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
@@ -270,6 +300,12 @@ ALTER TABLE `customer_categories`
 --
 ALTER TABLE `customer_orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблиці `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблиці `pending_orders`

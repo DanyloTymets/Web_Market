@@ -148,7 +148,7 @@ if(isset($_GET['order_id'])){
            <div class="col-md-9">
                <div class="box">
                    <h1 align="center"> Please confirm your payment</h1> 
-                   <form action="confirm.php?update_id='<?php echo $order_id;  ?>'" method="post" enctype="multipart/form-data">
+                   <form action="confirm.php?update_id=<?php echo $order_id;  ?>" method="post" enctype="multipart/form-data">
                        <div class="form-group">
                          <label> Invoice №: </label>
                           <input type="text" class="form-control" name="invoice_no" required> 
@@ -162,17 +162,18 @@ if(isset($_GET['order_id'])){
                           
                           <select name="payment_mode" class="form-control">
                               <option> Select Payment Mode </option>
+                              <option> offline payment </option>
                               <option> Credit Card </option>
                               <option> PayPal </option>
                               <option> Western Union </option> 
                           </select>
                        </div>
                        <div class="form-group">
-                         <label> Transaction / Reference ID: </label> 
-                          <input type="text" class="form-control" name="ref_no" required> 
+                         <label> Reference ID: </label> 
+                          <input type="text" class="form-control" name="ref_id" required> 
                        </div>
                        <div class="form-group">
-                         <label> PayPal: </label> 
+                         <label> PayPal, Western Union code: </label> 
                           <input type="text" class="form-control" name="code" required> 
                        </div>
                        <div class="form-group">
@@ -180,11 +181,33 @@ if(isset($_GET['order_id'])){
                           <input type="text" class="form-control" name="date" required> 
                        </div>
                        <div class="text-center">
-                           <button class="btn btn-primary btn-lg">
+                           <button class="btn btn-primary btn-lg" name="confirm_payment">
                                <i class="fa fa-user-md"></i> Confirm Payment 
                            </button>
                        </div>
                    </form>
+                   <?php
+                    if(isset($_POST['confirm_payment'])){
+                        $update_id = $_GET['update_id'];
+                        $invoice_no = $_POST['invoice_no'];
+                        $amount = $_POST['amount_sent'];
+                        $payment_mode = $_POST['payment_mode'];
+                        $ref_id = $_POST['ref_id'];
+                        $code = $_POST['code'];
+                        $payment_date = $_POST['date'];
+                        $complete = "Complete";
+                        $insert_payment = "insert into payments (invoice_no,amount,payment_option,ref_id,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_id','$code','$payment_date')";
+                        $run_payment = mysqli_query($con,$insert_payment);
+                        $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+                        $run_customer_order = mysqli_query($con,$update_customer_order);
+                        $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+                        $run_pending_order = mysqli_query($con,$update_pending_order);
+                        if($run_pending_order){
+                            echo "<script>alert('Thx for purchasing, orders will be completed soonly')</script>";
+                            echo "<script>window.open('account.php?orders','_self')</script>";   
+                        }
+                    }
+                   ?>
                </div>
            </div>
        </div>
