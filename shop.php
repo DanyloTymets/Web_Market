@@ -208,7 +208,7 @@ include_once("functions/functions.php");
              </div>
         </div>
             
-           <center>
+           <!--<center>
                <ul class="pagination">
                    <li class="active;"><a href="#">First Page</a></li>
                    <li><a href="#">1</a></li>
@@ -218,7 +218,12 @@ include_once("functions/functions.php");
                    <li><a href="#">5</a></li>
                    <li><a href="#">Last Page</a></li>
                </ul>
-           </center>
+           </center>-->
+           <center>
+                   <ul class="pagination">
+                        <?php getPagination(); ?>
+                   </ul>
+               </center>
            <?php 
               getPCategoriesProduct();
               getCCategoriesProduct();
