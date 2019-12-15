@@ -36,7 +36,7 @@ include_once("functions/functions.php");
                        <a href="cart.php">Check Cart</a>
                    </li>
                    <li>
-                       <a href="customer/account.php">Account</a>
+                       <a href="checkout.php">Account</a>
                    </li>
                    <li class="active">
                     <a href="checkout.php">
@@ -91,7 +91,13 @@ include_once("functions/functions.php");
                            <a href="contact.php">Contacts</a>
                        </li>
                         <li>
-                           <a href="customer/account.php">Account</a>
+                          <?php
+                           if(!isset($_SESSION['customer_email'])){
+                               echo"<a href='checkout.php'>My Account</a>";
+                           }else{
+                              echo"<a href='customer/account.php?orders'>My Account</a>";
+                           }
+                           ?>
                        </li> 
                    </ul>
                </div>

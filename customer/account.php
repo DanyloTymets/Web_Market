@@ -1,7 +1,11 @@
-<?php 
+<?php
 session_start();
+if(!isset($_SESSION['customer_email'])){
+    echo "<script>window.open('../checkout.php','_self')</script>";
+}else{
 include("includes/db.php");
-include_once("functions/functions.php");
+include("functions/functions.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +95,13 @@ include_once("functions/functions.php");
                            <a href="../contact.php">Contacts</a>
                        </li>
                         <li class="active">
-                           <a href="account.php">Account</a>
+                          <?php
+                           if(!isset($_SESSION['customer_email'])){
+                               echo"<a href='../checkout.php'>Account</a>";
+                           }else{
+                              echo"<a href='account.php?orders'>Account</a>";
+                           }
+                           ?>
                        </li> 
                    </ul>
                </div>

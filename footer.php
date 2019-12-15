@@ -7,15 +7,41 @@
                     <li><a href="shop.php">Shop</a></li>
                     <li><a href="cart.php">Shopping Cart</a></li>
                     <li><a href="contact.php">Contacts</a></li>
-                    <li><a href="customer/account.php">Account</a></li>
+                    <li>
+                        <?php
+                           if(!isset($_SESSION['customer_email'])){
+                               echo"<a href='checkout.php'>My Account</a>";
+                           }else{
+                              echo"<a href='customer/account.php?orders'>My Account</a>";
+                           }
+                        ?>
+                    </li>
                 </ul>               
                 <hr class="hidden-md hidden-lg hidden-sm">
             </div>
             <div class="com-sm-6 col-md-3">
                  <h4>User</h4>
                 <ul>
-                    <li><a href="checkout.php">Login</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <li>
+                    <a href="checkout.php">
+                     <?php
+                     if(!isset($_SESSION['customer_email'])){
+                          echo "<a href='checkout.php'> Login </a>";
+                         }else{
+                          echo " <a href='logout.php'> Log Out </a> ";
+                         }
+                     ?>
+                     </a>
+                    </li>
+                    <li>
+                        <?php
+                           if(!isset($_SESSION['customer_email'])){
+                               echo"<a href='register.php'> Register </a>";
+                           }else{
+                              echo"<a href='customer/account.php?edit_acc'> Edit Account </a>";
+                           }
+                           ?>
+                    </li>
                 </ul>
                 <hr class="hidden-md hidden-lg">
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 15 2019 р., 13:29
+-- Час створення: Гру 15 2019 р., 16:05
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -33,13 +33,6 @@ CREATE TABLE `cart` (
   `ip_add` varchar(255) NOT NULL,
   `qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Дамп даних таблиці `cart`
---
-
-INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
-(3, '::1', 1);
 
 -- --------------------------------------------------------
 
@@ -85,6 +78,55 @@ CREATE TABLE `customer_categories` (
 INSERT INTO `customer_categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 (1, 'Men', 'Strong part of humanity.'),
 (2, 'Women', 'Beautiful part of humanity.');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `customer_orders`
+--
+
+CREATE TABLE `customer_orders` (
+  `order_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `order_date` date NOT NULL,
+  `price` int(100) NOT NULL,
+  `order_status` text NOT NULL,
+  `invoice_no` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `customer_orders`
+--
+
+INSERT INTO `customer_orders` (`order_id`, `customer_id`, `qty`, `order_date`, `price`, `order_status`, `invoice_no`) VALUES
+(1, 1, 1, '2019-12-15', 300, 'pending', 1086946780),
+(2, 1, 1, '2019-12-15', 500, 'pending', 1086946780),
+(3, 1, 2, '2019-12-15', 500, 'pending', 1086946780);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `pending_orders`
+--
+
+CREATE TABLE `pending_orders` (
+  `order_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `invoice_no` int(10) NOT NULL,
+  `product_id` text NOT NULL,
+  `qty` int(10) NOT NULL,
+  `order_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `pending_orders`
+--
+
+INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `order_status`) VALUES
+(1, 1, 1086946780, '3', 1, 'pending'),
+(2, 1, 1086946780, '6', 1, 'pending'),
+(3, 1, 1086946780, '5', 2, 'pending');
 
 -- --------------------------------------------------------
 
@@ -178,6 +220,18 @@ ALTER TABLE `customer_categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Індекси таблиці `customer_orders`
+--
+ALTER TABLE `customer_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Індекси таблиці `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Індекси таблиці `products`
 --
 ALTER TABLE `products`
@@ -210,6 +264,18 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `customer_categories`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблиці `customer_orders`
+--
+ALTER TABLE `customer_orders`
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблиці `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблиці `products`

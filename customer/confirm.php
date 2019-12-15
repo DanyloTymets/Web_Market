@@ -1,7 +1,14 @@
-<?php 
+<?php
 session_start();
+if(!isset($_SESSION['customer_email'])){
+    echo "<script>window.open('../checkout.php','_self')</script>";
+}else{
 include("includes/db.php");
-include_once("functions/functions.php");
+include("functions/functions.php");
+}
+if(isset($_GET['order_id'])){
+    $order_id = $_GET['order_id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +98,13 @@ include_once("functions/functions.php");
                            <a href="../contact.php">Contacts</a>
                        </li>
                         <li class="active">
-                           <a href="account.php">Account</a>
+                          <?php
+                           if(!isset($_SESSION['customer_email'])){
+                               echo"<a href='../checkout.php'> Account</a>";
+                           }else{
+                              echo"<a href='account.php?orders'> Account</a>";
+                           }
+                           ?>
                        </li> 
                    </ul>
                </div>
@@ -135,7 +148,7 @@ include_once("functions/functions.php");
            <div class="col-md-9">
                <div class="box">
                    <h1 align="center"> Please confirm your payment</h1> 
-                   <form action="confirm.php" method="post" enctype="multipart/form-data">
+                   <form action="confirm.php?update_id='<?php echo $order_id;  ?>'" method="post" enctype="multipart/form-data">
                        <div class="form-group">
                          <label> Invoice №: </label>
                           <input type="text" class="form-control" name="invoice_no" required> 
