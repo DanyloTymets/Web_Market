@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 15 2019 р., 19:16
+-- Час створення: Гру 16 2019 р., 22:19
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -25,6 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблиці `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(10) NOT NULL,
+  `admin_name` varchar(255) NOT NULL,
+  `admin_phone` varchar(255) NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `admin_country` text NOT NULL,
+  `admin_pass` varchar(255) NOT NULL,
+  `admin_job` varchar(255) NOT NULL,
+  `admin_about` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_phone`, `admin_email`, `admin_country`, `admin_pass`, `admin_job`, `admin_about`) VALUES
+(1, 'TD', '+298 485 254', 'TD@gmail.com', 'Faroe Islands', 'TD', 'Webshop creator', 'Was working hard to create this site)');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблиці `cart`
 --
 
@@ -33,6 +57,13 @@ CREATE TABLE `cart` (
   `ip_add` varchar(255) NOT NULL,
   `qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
+(4, '::1', 2);
 
 -- --------------------------------------------------------
 
@@ -232,6 +263,12 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 --
 
 --
+-- Індекси таблиці `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Індекси таблиці `customers`
 --
 ALTER TABLE `customers`
@@ -282,6 +319,12 @@ ALTER TABLE `slider`
 --
 -- AUTO_INCREMENT для збережених таблиць
 --
+
+--
+-- AUTO_INCREMENT для таблиці `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблиці `customers`

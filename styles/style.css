@@ -54,8 +54,14 @@ body{
     padding: 0 5px;
 }
 
-/* Header Styles */
-
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #B0C4DE;
+    }
+    .navbar .input-group-btn{
+        background-color: #ffffff;
+    }
+}
 .navbar{
     background: #B0C4DE;
 }
@@ -85,10 +91,10 @@ body{
 .padding-nav{
     padding-top: 10px;
 }
-.btn {
+/*.btn {
   margin-left: 10px;
   margin-right: 10px;
-}
+}*/
 .btn-primary {
   font-family: Raleway-SemiBold;
   font-size: 13px;

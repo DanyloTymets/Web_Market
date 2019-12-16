@@ -161,3 +161,21 @@ hr.dotted{
     color: #5F9EA0;
     margin-right: 5px;
 }
+
+.btn-primary {
+  font-family: Raleway-SemiBold;
+  font-size: 13px;
+  color: #B0C4DE;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid #5F9EA0;
+  border-radius: 40px;
+  background: transparent;
+  background-color: #fff !important;
+  transition: all 0.3s ease 0s;
+}
+.btn-primary:hover {
+  color: #B0C4DE;
+  background: #ffffff;
+  border: 2px solid #B0C4DE;
+}

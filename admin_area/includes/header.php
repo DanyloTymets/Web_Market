@@ -15,21 +15,5 @@
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head> 
-    <div id="wrapper"> 
-       <?php include("includes/sidebar.php"); ?>
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <?php
-                    if(isset($_GET['dashboard'])){ 
-                        include("dashboard.php"); 
-                    }
-                ?>
-            </div>
-        </div>
-    </div>
-<script src="js/jquery-331.min.js"></script>     
-<script src="js/bootstrap-337.min.js"></script>           
-</body>
-</html>
-<?php } ?>
