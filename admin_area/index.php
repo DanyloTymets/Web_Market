@@ -12,6 +12,11 @@
        <?php include("sidebar.php"); ?>
         <div id="page-wrapper">
             <div class="container-fluid">
+                <?php
+                    if(isset($_GET['dashboard'])){ 
+                        include("dashboard.php"); 
+                    }
+                ?>
             </div>
         </div>
     </div>

@@ -50,13 +50,13 @@
         <ul class="nav navbar-nav side-nav">
             <li>
                 <a href="index.php?dashboard">
-                        <i class="fa fa-fw fa-th-list"></i> Dashboard 
+                    <i class="fa fa-fw fa-th-list"></i> Dashboard 
                 </a> 
             </li>
             <li>
                 <a href="#" data-toggle="collapse" data-target="#users">
-                        <i class="fa fa-fw fa-user "></i> Users
-                        <i class="fa fa-fw fa-caret-down"></i>     
+                    <i class="fa fa-fw fa-user "></i> Users
+                    <i class="fa fa-fw fa-caret-down"></i>     
                 </a>
                 <ul id="users" class="collapse">
                     <li>
