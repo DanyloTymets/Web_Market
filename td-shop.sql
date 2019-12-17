@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Гру 16 2019 р., 22:19
+-- Час створення: Гру 17 2019 р., 13:22
 -- Версія сервера: 10.4.10-MariaDB
 -- Версія PHP: 7.3.12
 
@@ -180,7 +180,7 @@ CREATE TABLE `pending_orders` (
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `order_status`) VALUES
 (1, 1, 1086946780, '3', 1, 'Complete'),
-(2, 1, 1086946780, '6', 1, 'Complete'),
+(2, 1, 2147483647, '6', 1, 'Complete'),
 (3, 1, 1086946780, '5', 2, 'pending');
 
 -- --------------------------------------------------------
@@ -212,7 +212,7 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 (4, 1, 2, '2019-12-14 19:09:44', 'Longclaw Sword', 'longclaw-sword.jpg', 290, 'Sword', '<p>Film copy.</p>'),
 (5, 4, 1, '2019-12-14 19:09:55', 'Medieval Shield', 'Medieval-shield.jpg', 250, 'Shield', '<p>Nice adding for sword)</p>'),
 (6, 3, 1, '2019-12-14 19:10:06', 'Medieval Armor', 'Medieval-armor.jpg', 500, 'Armor', '<p>Classic medieval armor replica.</p>'),
-(7, 3, 2, '2019-12-14 19:10:16', 'Medieval Women Armor', 'Medieval-girl-armor.jpg', 450, 'Armor', '<p>Egyptian medieval female armor.</p>');
+(7, 3, 2, '2019-12-17 12:17:42', 'Medieval Women Armor', 'Medieval-girl-armor.jpg', 490, 'Armor', '<p>Egyptian medieval female armor.</p>');
 
 -- --------------------------------------------------------
 
