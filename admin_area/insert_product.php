@@ -1,5 +1,7 @@
-<?php
-include("includes/db.php"); 
+<?php 
+    if(!isset($_SESSION['admin_email'])){
+        echo "<script>window.open('login.php','_self')</script>";
+    }else{
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +12,18 @@ include("includes/db.php");
     <title> Insert Products </title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body> 
-<!--<div class="row">
+<div class="row">
     <div class="col-lg-12">
-        <ol class="breadcrumb">
+        <!--<ol class="breadcrumb">
             <li class="active">
                 <i class="fa fa-dashboard"></i> Dashboard / Insert Products 
             </li>
-        </ol>
+        </ol>-->
     </div>
-</div>-->
+</div>
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -139,3 +142,5 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+
+<?php } ?>
